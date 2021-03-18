@@ -7,5 +7,6 @@ A simple NodeJS service that shows how an MVP NICHE works.
 
 ## Related Links
 
- * (assets/api-story.md)[API STory]
+ * [API Story](assets/api-story.md)
+
 
