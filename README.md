@@ -9,6 +9,8 @@ A simple NodeJS service that shows how an MVP NICHE works.
 
  * [API Story](assets/api-story.md)
  * [Storage Model](assets/storage-model.md)
+ * [ALPS Document](alps/niche.json)
+ * [ALPS Diagram](alps/niche.svg)
 
 
 
