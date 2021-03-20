@@ -1,0 +1,91 @@
+{
+ "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps" : {
+    "version": "1.0",
+    "title" : "NICHE\nNetworked Information Container for Hypermedia Exploration",
+    "doc" : {
+      "value": "Proof of concept implementation of a NICHE for multi-agent autonomous systems. In it’s most simple form, a NICHE is a network resource (a document reachable via a URL) that holds a list of all the STIGs and PHERROs  associated with the NICHE. NICHEs can be of any size and may be linked together to form what might be thought of as an eco-system."
+    },
+    "descriptor" : [
+      {"id": "id", "name": "id", "type": "semantic", "def": "https://schema.org/identifier", "tag": "property",
+        "doc": {"value": "Unique identifier for an element."}
+      },
+      {"id": "title", "name": "title", "type": "semantic", "def": "https://schema.org/title", "tag": "property",
+        "doc": {"value": "Human-readable, non-unique identifier for an element."}
+      },
+      {"id": "status", "name": "status", "type": "semantic", "def":"https://schema.org/status", "tag": "property",
+        "doc": {"value": "enumerated value for an element's status (ready, working, done)."}
+      },
+      {"id": "metadata", "name": "metadata", "type": "semantic", "def":"https://www.iana.org/assignments/link-relations/link-relations.xhtml#service-meta", "tag": "property",
+        "doc": {"value": "collection of name-value pairs of related data."}
+      },
+      {"id": "niche", "name": "niche", "type": "semantic", "tag": "resource",
+        "doc": {"value": "Networked Information Conatiner for Hypermedia Exploration. Contains a list of all the STIGs and PHERROs assocaited with this NICHE."},
+        "descriptor": [
+          {"href": "#id"},
+          {"href": "#title"},
+          {"href": "#status"},
+          {"href": "#metadata"},
+          {"href": "#stig"},
+          {"href": "#pherro"},
+          {"href": "#goNiche"},
+          {"href": "#goStigList"},
+          {"href": "#goStigFilter"},
+          {"href": "#doStigCreate"},
+          {"href": "#goPherroList"},
+          {"href": "#doNicheCull"}
+        ]
+      },
+      {"id": "stig", "name": "stig", "type": "semantic", "tag": "resource",
+        "doc": {"value": "Stigmergic Token for Information and Guidance. One or more STIGs that are associated with this NICHE."},
+        "descriptor": [
+          {"href": "#id"},
+          {"href": "#title"},
+          {"href": "#status"},
+          {"href": "#metadata"},
+          {"href": "#goStigRead"},
+          {"href": "#goStigList"},
+          {"href": "#goStigFilter"},
+          {"href": "#doStigStatus"},
+          {"href": "#doStigCreate"},
+          {"href": "#goNiche"}
+        ]
+      },
+      {"id": "pherro", "name": "pherro", "type": "semantic", "tag": "resource",
+        "doc": {"value": "Programmable Hypermedia Entity for Resilient, Reliable Operations. One or more PHERROs associated with this NICHE"},
+        "descriptor": [
+          {"href": "#id"},
+          {"href": "#title"},
+          {"href": "#status"},
+          {"href": "#metadata"},
+          {"href": "#goNiche"},
+          {"href": "#goPherroList"}
+        ]
+      },
+      {"id": "goNiche", "name": "goNiche", "type":"safe", "rel":"home collection niche", "rt": "#niche","tag": "action",
+        "doc": {"value":"Return the complete state of this NICHE including any associated STIGs and PHERROs."}
+      },
+      {"id": "goStigList", "name": "goStigList", "type":"safe", "rel":"collection stig", "rt": "#stig","tag": "action",
+        "doc": {"value": "Return a list of the STIGs in this NICHE."}
+      },
+      {"id": "goStigFilter", "name": "goStigFilter", "type":"safe", "rel":"collection stig", "rt": "#stig","tag": "action",
+        "doc": {"value":"Return a list of STIGs in this NICHE filtered by 'id', 'status', title'."}
+      },
+      {"id": "doStigCreate", "name": "doStigCreate", "type": "idempotent", "rel":"create", "rt": "#stig", "tag": "action", 
+        "doc": {"value": "Create a new STIG for this NICHE."}
+      },
+      {"id": "goStigRead", "name": "goStigRead", "type": "safe", "rel":"item", "rt": "#stig", "tag": "action", 
+        "doc": {"value": "Return a single STIG element."}
+      },
+      {"id": "doStigStatus", "name": "doStigStatus", "type": "idempotent", "rel":"item status", "rt": "#stig", "tag": "action", 
+        "doc": {"value": "Modify the status of a STIG"}
+      },
+      {"id": "goPherroList", "name": "goPherroList", "type":"safe", "rel":"collection pherro", "rt": "#pherro","tag": "action", 
+        "doc": {"value": "Return a list of regsitered PHERRO elements for this NICHE."}
+      },
+      {"id": "doNicheCull", "name": "doNicheCull", "type":"idempotent", "rel":"collection cull remove", "rt": "#niche","tag": "action remove", 
+        "doc" : {"value": "Remove 'dead/old/broken' STIGs or PHERROs from the NICHE."}
+      }
+    ]
+  }
+}

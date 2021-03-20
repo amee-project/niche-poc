@@ -1,0 +1,14 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "Networked Information Conatiner for Hypermedia Exploration. Contains a list of all the STIGs and PHERROs assocaited with this NICHE."
+    },
+    "descriptor": [
+      {
+        "id": "niche",
+        "type": "semantic"
+      }
+    ]
+  }
+}

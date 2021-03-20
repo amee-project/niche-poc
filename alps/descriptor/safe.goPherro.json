@@ -1,0 +1,20 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "Return a list of regsitered PHERRO elements for this NICHE."
+    },
+    "descriptor": [
+      {
+        "id": "goPherro",
+        "type": "safe"
+      }
+    ]
+  },
+  "link": [
+    {
+      "rel": "parent",
+      "href": "semantic..json"
+    }
+  ]
+}

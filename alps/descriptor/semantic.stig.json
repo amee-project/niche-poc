@@ -1,0 +1,14 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "Stigmergic Token for Information and Guidance. One or more STIGs that are associated with this NICHE."
+    },
+    "descriptor": [
+      {
+        "id": "stig",
+        "type": "semantic"
+      }
+    ]
+  }
+}

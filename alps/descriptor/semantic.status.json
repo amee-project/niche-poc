@@ -1,0 +1,15 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "enumerated value for an element's status (ready, working, done)."
+    },
+    "descriptor": [
+      {
+        "id": "status",
+        "ref": "https://schema.org/status",
+        "type": "semantic"
+      }
+    ]
+  }
+}

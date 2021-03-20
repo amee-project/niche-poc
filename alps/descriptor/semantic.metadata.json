@@ -1,0 +1,15 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "collection of name-value pairs of related data."
+    },
+    "descriptor": [
+      {
+        "id": "metadata",
+        "ref": "https://www.iana.org/assignments/link-relations/link-relations.xhtml#service-meta",
+        "type": "semantic"
+      }
+    ]
+  }
+}

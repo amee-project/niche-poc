@@ -1,0 +1,24 @@
+digraph application_state_diagram {
+  graph [
+    labelloc="b";
+    fontname="Helvetica"
+    label="NICHE
+Networked Information Container for Hypermedia Exploration";
+    URL="index.html" target="_parent"
+  ];
+  node [shape = box, style = "bold,filled"];
+
+    niche [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">niche<br />(id)<br />(title)<br />(status)<br />(metadata)<br />(stig)<br />(pherro)<br /></td></tr></table>>,shape=box URL="docs/semantic.niche.html" target="_parent"]
+    stig [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">stig<br />(id)<br />(title)<br />(status)<br />(metadata)<br /></td></tr></table>>,shape=box URL="docs/semantic.stig.html" target="_parent"]
+    pherro [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">pherro<br />(id)<br />(title)<br />(status)<br />(metadata)<br /></td></tr></table>>,shape=box URL="docs/semantic.pherro.html" target="_parent"]
+
+    niche -> niche [label=<<table  border="0"><tr><td align="left" href="docs/safe.goNiche.html">goNiche (safe)</td></tr><tr><td align="left" href="docs/idempotent.doNicheCull.html">doNicheCull (idempotent)</td></tr></table>> fontsize=13];
+    niche -> stig [label=<<table  border="0"><tr><td align="left" href="docs/safe.goStigList.html">goStigList (safe)</td></tr><tr><td align="left" href="docs/safe.goStigFilter.html">goStigFilter (safe)</td></tr><tr><td align="left" href="docs/idempotent.doStigCreate.html">doStigCreate (idempotent)</td></tr></table>> fontsize=13];
+    niche -> pherro [label = "goPherroList, collection pherro (safe)" URL="docs/safe.goPherroList.html" target="_parent" fontsize=13];
+    stig -> stig [label=<<table  border="0"><tr><td align="left" href="docs/safe.goStigRead.html">goStigRead (safe)</td></tr><tr><td align="left" href="docs/safe.goStigList.html">goStigList (safe)</td></tr><tr><td align="left" href="docs/safe.goStigFilter.html">goStigFilter (safe)</td></tr><tr><td align="left" href="docs/idempotent.doStigStatus.html">doStigStatus (idempotent)</td></tr><tr><td align="left" href="docs/idempotent.doStigCreate.html">doStigCreate (idempotent)</td></tr></table>> fontsize=13];
+    stig -> niche [label = "goNiche, home collection niche (safe)" URL="docs/safe.goNiche.html" target="_parent" fontsize=13];
+    pherro -> niche [label = "goNiche, home collection niche (safe)" URL="docs/safe.goNiche.html" target="_parent" fontsize=13];
+    pherro -> pherro [label = "goPherroList, collection pherro (safe)" URL="docs/safe.goPherroList.html" target="_parent" fontsize=13];
+
+
+}

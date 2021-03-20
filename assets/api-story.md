@@ -14,7 +14,7 @@ The NICHE is nothing but a blank document that can host STIGs as identifiable hy
 When interacting with a NICHE, other entities (STIGs and PHERROs) should be able to:
 
  * get a `list` of elements (STIGs & PHERROs) in this NICHE
- * read the details of a single STIG
+ * `read` the details of a single STIG
  * change the `status` value of a STIG (`waiting`, `working`, `done`). Can the NICHE do this or just PHERROs?
  * `create` a new STIGs in the NICHE (only a STIG can create another?)
  * `remove` an existing STIG from the NICHE (where does it "go"?)

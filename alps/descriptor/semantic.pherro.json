@@ -1,0 +1,14 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "Programmable Hypermedia Entity for Resilient, Reliable Operations. One or more PHERROs associated with this NICHE"
+    },
+    "descriptor": [
+      {
+        "id": "pherro",
+        "type": "semantic"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "doc": {
+      "value": "Human-readable, non-unique identifier for an element."
+    },
+    "descriptor": [
+      {
+        "id": "title",
+        "ref": "https://schema.org/title",
+        "type": "semantic"
+      }
+    ]
+  }
+}
